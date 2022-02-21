@@ -1,0 +1,17 @@
+ import variables_globales as vg           #importe les variables du fichier1 et crée une copie dans le main mais si on modifie cette variable dans le fichier1, 
+import control_parametres as cp
+import affichage as af
+import IN
+import OUT
+
+"""
+cp.setup()
+cp.control_step()
+cp.control_seq()
+cp.control_led()
+"""
+def main():
+
+
+
+main()
