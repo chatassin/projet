@@ -48,6 +48,8 @@ bl = 0  # pin bouton pour lancer la séquence
 bo = 0  # pin bouton octave
 bnp = 0  # pin bouton note+
 bnm = 0  # pin bouton note-
+bouton_seq1 = 0
+
 
 # rotaty encoders
 
