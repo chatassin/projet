@@ -50,6 +50,19 @@ def control_step():
 ##################################################################
 # seq
 
+def detect_seq():
+    etat1 = GPIO.input(vg.bouton_seq1)
+    etat2 = GPIO.input(vg.bouton_seq2)
+    if etat1==0 and etat2 == 1:
+        step_moins()
+        sleep(0.2)
+        af.UPDATE_SCREEN()
+        control_led()
+    elif etat1==1 and etat2==0:
+        step_plus()
+        sleep(0.2)
+        af.UPDATE_SCREEN()
+        control_led()
 
 def control_seq():
 
@@ -92,16 +105,18 @@ def control_led():
         GPIO.setup(led[1], GPIO.OUT)
         GPIO.output(led[1], GPIO.LOW)  # met le deuxieme pin sur LOW
 
-    def play_seq(leds):
-        # allume les LEDs quand la séquence est en train d'être jouée
-        while vg.SEQ:
-            for i in range(len(vg.STEPLIST)-1):
-                light_led(leds[i])
-                sleep(1)  # il faut régler le nombre selon le tempo choisi
+
 
     leds = charlieplexing()
     light_led(leds[vg.STEP_NUM])
     play_seq(leds)
+
+def play_seq(leds):
+    # allume les LEDs quand la séquence est en train d'être jouée
+    while vg.SEQ:
+        for i in range(len(vg.STEPLIST)-1):
+            light_led(leds[i])
+            sleep(1)  # il faut régler le nombre selon le tempo choisi
 
 ##################################################################
 # octave
