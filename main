@@ -5,12 +5,22 @@ import IN
 import OUT
 
 """
-cp.setup()
-cp.control_step()
-cp.control_seq()
-cp.control_led()
+
+
+
 """
 def main():
+ cp.setup()
+ While True:
+  cp.control_octave()
+  cp.control_step()
+  cp.control_pitch()
+  cp.control_param_value()
+  cp.control_seq()
+  cp.control_tempo()
+  cp.control_led()
+  
+  
 
 
 
