@@ -51,21 +51,17 @@ def control_step():
 # seq
 
 def detect_seq():
-    etat1 = GPIO.input(vg.bouton_seq1)
-    etat2 = GPIO.input(vg.bouton_seq2)
-    if etat1==0 and etat2 == 1:
-        step_moins()
+    etat1 = GPIO.input(vg.bl)
+    if etat1==1:
         sleep(0.2)
-        af.UPDATE_SCREEN()
+        vg.SEQ == True
         control_led()
-    elif etat1==1 and etat2==0:
-        step_plus()
-        sleep(0.2)
-        af.UPDATE_SCREEN()
-        control_led()
+    else : 
+        vg.SEQ == False
 
 def control_seq():
-
+    while etat1= 1:
+        
     def change_seq():
         # change l'état de seq
         if vg.SEQ:
